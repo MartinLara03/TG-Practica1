@@ -1,0 +1,14 @@
+# Visual Studio
+.vs/
+
+# Compilacion
+bin/
+obj/
+
+# Archivos de usuario
+*.user
+*.suo
+
+# Build
+Debug/
+Release/

@@ -53,16 +53,21 @@ namespace Practica1
 
 
             // 5. DIVISIBLE POR 2, 3, 5 O 7
+
+
+
             Console.WriteLine("5. DIVISIBILIDAD");
-
             Console.Write("Ingresa un número: ");
-            int numeroDivisible = int.Parse(Console.ReadLine());
 
-            verificarDivisible(ref numeroDivisible);
+            int numeroDivisible = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine();
+            string mensaje = string.Empty;
+            verificarDivisible(numeroDivisible, ref mensaje);
+
+            Console.WriteLine(mensaje);
 
 
+          
             // 6. IMPRESIÓN DE MENSAJES
             Console.WriteLine("6. FIZZBUZZ");
 
@@ -89,7 +94,7 @@ namespace Practica1
         }
 
 
-       
+
         //2.  Determinar número mayor y menor
         static void mayorMenor(int numero1, int numero2)
         {
@@ -110,7 +115,7 @@ namespace Practica1
         }
 
 
-    
+
         //3.  Calcular factorial
         static void calcularFactorial(int numero)
         {
@@ -132,7 +137,7 @@ namespace Practica1
         }
 
 
-        
+
         // 4. Determinar si un número es par o impar
         static void parImpar(int numero)
         {
@@ -147,60 +152,59 @@ namespace Practica1
         }
 
 
-    
+
         //5. Parámetro por referencia
-        static void verificarDivisible(ref int numero)
+        static void verificarDivisible(int numero, ref string mensaje)
         {
             if (numero % 2 == 0)
             {
-                Console.WriteLine("El número " + numero + " es divisible entre 2.");
+                mensaje = "El número " + numero + " es divisible entre 2.";
             }
             else if (numero % 3 == 0)
             {
-                Console.WriteLine("El número " + numero + " es divisible entre 3.");
+                mensaje = "El número " + numero + " es divisible entre 3.";
             }
             else if (numero % 5 == 0)
             {
-                Console.WriteLine("El número " + numero + " es divisible entre 5.");
+                mensaje = "El número " + numero + " es divisible entre 5.";
             }
             else if (numero % 7 == 0)
             {
-                Console.WriteLine("El número " + numero + " es divisible entre 7.");
+                mensaje = "El número " + numero + " es divisible entre 7.";
             }
             else
             {
-                Console.WriteLine("El número no es divisible por 2, 3, 5 o 7.");
+                mensaje = "El número no es divisible por 2, 3, 5 o 7.";
             }
         }
 
 
-        
-        // 6. Fizz-Buzz del 1 al 100
-        static string fizzBuzz()
-        {
-            string resultado = "";
-
-            for (int i = 1; i <= 100; i++)
+            // 6. Fizz-Buzz del 1 al 100
+            static string fizzBuzz()
             {
-                string mensaje = "";
+                string resultado = "";
 
-                if (i % 15 == 0)
+                for (int i = 1; i <= 100; i++)
                 {
-                    mensaje = "FizzBuzz";
-                }
-                else if (i % 3 == 0)
-                {
-                    mensaje = "Fizz";
-                }
-                else if (i % 5 == 0)
-                {
-                    mensaje = "Buzz";
+                    string mensaje = "";
+
+                    if (i % 15 == 0)
+                    {
+                        mensaje = "FizzBuzz";
+                    }
+                    else if (i % 3 == 0)
+                    {
+                        mensaje = "Fizz";
+                    }
+                    else if (i % 5 == 0)
+                    {
+                        mensaje = "Buzz";
+                    }
+
+                    resultado = resultado + i + " " + mensaje + "\n";
                 }
 
-                resultado = resultado + i + " " + mensaje + "\n";
+                return resultado;
             }
-
-            return resultado;
         }
     }
-}
